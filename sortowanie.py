@@ -7,11 +7,11 @@ import sys
 import matplotlib.pyplot as plt
 
 # Importujemy funkcje sortujące z osobnych plików
-from bubble_sort import bubble_sort
-from selection_sort import selection_sort
-from insertion_sort import insertion_sort
-from merge_sort import merge_sort
-from quick_sort import quick_sort
+from src.bubble_sort import bubble_sort
+from src.selection_sort import selection_sort
+from src.insertion_sort import insertion_sort
+from src.merge_sort import merge_sort
+from src.quick_sort import quick_sort
 
 def read_words(filename, n):
     with open(filename, 'r', encoding='utf-8') as f:
@@ -36,7 +36,7 @@ def plot_results(sizes, times, algorithm_name):
     plt.xlabel('Liczba elementów')
     plt.ylabel('Czas (sekundy)')
     plt.grid(True)
-    plt.savefig(f'{algorithm_name}.png')
+    plt.savefig(f'images/{algorithm_name}.png')
     plt.close()
 
 def test_sorting_algorithm(sort_function, algorithm_name, data_file):
